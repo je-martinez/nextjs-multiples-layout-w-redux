@@ -2,7 +2,7 @@
 
 import { useAppSelector } from "@/lib/hooks";
 import Image from "next/image";
-import NavigationButtons from "./NavigationButtons";
+import NavigationButtons from "../NavigationButtons";
 
 export const Header: React.FC = () => {
   const headerText = useAppSelector((state) => state.layout.headerText);

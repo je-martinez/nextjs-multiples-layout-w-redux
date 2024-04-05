@@ -5,7 +5,7 @@ import { layoutSlice } from "./features/layout/layoutSlice";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(counterSlice, layoutSlice);
+const rootReducer = combineSlices(layoutSlice, counterSlice);
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>;
 

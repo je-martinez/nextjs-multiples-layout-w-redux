@@ -1,5 +1,5 @@
 "use client";
-import Counter from "@/components/Counter";
+import Counter from "@/components/counter/Counter";
 
 export default function Page() {
   return (
