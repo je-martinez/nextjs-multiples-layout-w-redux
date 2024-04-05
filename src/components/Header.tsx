@@ -2,6 +2,7 @@
 
 import { useAppSelector } from "@/lib/hooks";
 import Image from "next/image";
+import NavigationButtons from "./NavigationButtons";
 
 export const Header: React.FC = () => {
   const headerText = useAppSelector((state) => state.layout.headerText);
@@ -30,7 +31,8 @@ export const Header: React.FC = () => {
             />
           </a>
         </div>
-      </div>{" "}
+      </div>
+      <NavigationButtons />
     </header>
   );
 };
