@@ -4,11 +4,17 @@ import {
   increment,
   selectCount,
 } from "@/lib/features/counter/counterSlice";
+import { changeHeaderText } from "@/lib/features/layout/layoutSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { useEffect } from "react";
 
 const Counter = () => {
   const dispatch = useAppDispatch();
   const value = useAppSelector(selectCount);
+
+  useEffect(() => {
+    dispatch(changeHeaderText("Your are in the Counter Page"));
+  }, [dispatch]);
 
   return (
     <>
