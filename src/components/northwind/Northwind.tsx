@@ -1,6 +1,6 @@
 "use client";
 
-import { northwindEntities } from "@/data/northwind.data";
+import { northwindEntities } from "@/constants/northwind.constants";
 import React from "react";
 
 const Northwind = () => {
