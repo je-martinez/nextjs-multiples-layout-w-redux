@@ -1,16 +1,7 @@
 "use client";
-import { changeHeaderText } from "@/lib/features/layout/layoutSlice";
-import { useAppDispatch } from "@/lib/hooks";
 import Image from "next/image";
-import { useEffect } from "react";
 
 const Home = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(changeHeaderText("Getting Started"));
-  }, [dispatch]);
-
   return (
     <>
       <Image

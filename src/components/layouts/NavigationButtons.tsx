@@ -1,5 +1,7 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 interface Path {
   path: string;
@@ -8,12 +10,16 @@ interface Path {
 
 const paths: Path[] = [
   {
-    path: "/",
     name: "Home",
+    path: "/",
   },
   {
-    path: "/counter",
     name: "Counter",
+    path: "/counter",
+  },
+  {
+    name: "Northwind",
+    path: "/northwind",
   },
 ];
 
@@ -23,16 +29,15 @@ const NavigationButtons = () => {
   return (
     <div className="flex flex-row justify-start">
       {paths.map((path) => (
-        <button
-          key={path.path}
-          className="middle none center mr-4 rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:opacity-50 disabled:shadow-none"
-          data-ripple-light="true"
-          onClick={() => {
-            push(path.path);
-          }}
-        >
-          {path.name}
-        </button>
+        <React.Fragment key={path.path}>
+          <Link
+            href={path.path}
+            className="middle p-2 m-2 h-12 hover:border-b-4 border-b-blue-500 text-white"
+            data-ripple-light="true"
+          >
+            {path.name}
+          </Link>
+        </React.Fragment>
       ))}
     </div>
   );
